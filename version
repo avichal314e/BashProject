@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while IFS= read -r line; do
+	echo " "
+	echo "Utility: $line"
+	if `command -v "$line" >/dev/null 2>&1`; then
+		echo `$line --version`
+	else
+  		echo "The utility $line is not installed." 
+	fi
+done < "$1"

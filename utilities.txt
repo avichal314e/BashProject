@@ -1,0 +1,5 @@
+google-chrome
+bash
+firefox
+ubuntu
+bluefish

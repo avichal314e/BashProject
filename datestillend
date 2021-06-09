@@ -1,0 +1,16 @@
+#!/bin/bash
+
+year=$(date +%Y)
+mon=$(date +%m)
+curday=$(date +%d)
+day=$(echo $curday | sed 's/^0*//')        #remove starting zero, if present
+
+last=$(date -d "$mon/1 + 1 month - 1 day" "+%b %d " | awk '{print $2}')   #number of days in the month
+
+while [ $day -le $last ]
+do
+echo $day-$mon-$year &
+day=$[$day+1]
+done
+
+

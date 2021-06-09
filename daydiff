@@ -1,0 +1,6 @@
+#!/bin/bash
+
+A=$1
+B=$2
+#echo $(date -d $A +%s)
+echo $(( ($(date -d $B +%s) - $(date -d $A +%s)) / 86400 )) days
