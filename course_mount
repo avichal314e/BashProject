@@ -10,6 +10,17 @@ courses=(
 )
 
 
+usage(){
+
+	echo "Usage:"
+        echo -e '\t' "./course_mount.sh -h To print this help message"
+        echo -e '\t' "./course_mount.sh -m -c [course] For mounting a given course"
+        echo -e '\t' "./course_mount.sh -u -c [course] For unmounting a given course"
+        echo "If course name is ommited all courses will be (un)mounted"
+}
+
+
+
 #function to check mount exists
 check_mount() {
 	if mountpoint -q "/home/trainee/courses/$1"; then 
@@ -88,11 +99,7 @@ unmount_all() {
 val=$1
 if [[ $val == "-h" ]]
         then
-        echo "Usage:"
-        echo -e '\t' "./course_mount.sh -h To print this help message"
-        echo -e '\t' "./course_mount.sh -m -c [course] For mounting a given course"
-        echo -e '\t' "./course_mount.sh -u -c [course] For unmounting a given course"
-        echo "If course name is ommited all courses will be (un)mounted"
+        usage
 elif [[ $val == "-m" ]]
         then
         arguments=$#
