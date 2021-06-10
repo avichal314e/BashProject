@@ -46,9 +46,9 @@ mount_course() {
 }
 
 mount_all() {
-        for i in "${courses[@]}"
+        for course in "${courses[@]}"
         do
-        mount_course "$i"
+        mount_course "$course"
         done
     # Loop through courses array
     # call mount_course
@@ -74,9 +74,9 @@ unmount_course() {
 
 # function for unmount all courses
 unmount_all() {
-	for i in "${courses[@]}"
+	for course in "${courses[@]}"
         do
-        unmount_course "$i"
+        unmount_course "$course"
         done
 
     # Loop through courses array
@@ -88,7 +88,6 @@ unmount_all() {
 val=$1
 if [[ $val == "-h" ]]
         then
-        echo "./course_mount.sh -h"
         echo "Usage:"
         echo -e '\t' "./course_mount.sh -h To print this help message"
         echo -e '\t' "./course_mount.sh -m -c [course] For mounting a given course"
