@@ -1,1 +1,1 @@
-# 314e Corporation Training Bash Project1 and Bah Project2
+# 314e Corporation Training: Bash Project1 and Bash Project2
