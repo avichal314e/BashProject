@@ -42,7 +42,7 @@ mount_course() {
 			echo "$val Mount Already Exists."
 		else
 			sudo mkdir -p /home/trainee/courses/$val 
-			sudo bindfs -p a-w -u trainee -g ftpaccess "/data/courses/$val" "/home/trainee/courses/$val"
+			sudo bindfs -p 550 -u trainee -g ftpaccess "/data/courses/$val" "/home/trainee/courses/$val"
 			echo "Mounted $val"
 		fi
     	else
